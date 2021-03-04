@@ -18,7 +18,7 @@ export default withRouter(class Header extends Component {
                         Home
                     </NavLink>
                     <NavLink exact className="header-links" to="/search">
-                        Search Books
+                        Search
                     </NavLink>
                     <NavLink exact className="header-links" to="/favorites">
                         Favorites

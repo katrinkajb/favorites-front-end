@@ -1,21 +1,21 @@
-.App {
+body {
+  background-image: url('http://getwallpapers.com/wallpaper/full/4/1/a/1016770-large-wallpaper-library-1920x1080-for-macbook.jpg');
+  background-repeat: no-repeat;
+  background-size: stretch;
+  background-position: center;
+  color: white;
   text-align: center;
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* .App {
+  text-align: center;
+  justify-content: center;
+} */
 
 .App-header {
-  background-color: #282c34;
-  min-height: 10vh;
+  background-color: rgba(245, 97, 97, 0.795);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +24,17 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header-links {
+  margin: 5px;
+  color: rgb(26, 16, 122)
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  background-color: rgba(107, 75, 32, 0.767);
+  width: fit-content;
+  border: 1px black solid;
+  border-radius: 5px;
+  align-content: center;
+  justify-self: center;
+  margin: 30px;
 }
