@@ -5,7 +5,7 @@ export default class HomePage extends Component {
     render() {
         return (
             <div className='container'>
-                Love books? Welcome! We do too! Go to Search to find and remember your favorites.
+                <h2>Love books? Welcome! We do too! Sign up then go to Search to find and save your favorites.</h2>
             </div>
         )
     }
