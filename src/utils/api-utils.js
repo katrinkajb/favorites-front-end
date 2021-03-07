@@ -1,7 +1,7 @@
 import request from 'superagent';
 
-// const URL = 'https://favorites-back-end.herokuapp.com';
-const URL = 'http://localhost:3000';
+const URL = 'https://favorites-back-end.herokuapp.com';
+// const URL = 'http://localhost:3000';
 
 export async function signUpUser(name, email, password) {
     const response = await request
@@ -27,24 +27,20 @@ export async function searchBooks(query, token) {
     return response.body;
 }
 
+export async function addFavorite(book, token) {
+    const response = await request
+        .post(`${URL}/api/favorites`)
+        .set('Authorization', token)
+        .send(book)
 
+    return response.body;
+}
 
+export async function getFavorites(token) {
+    const response = await request
+        .get(`${URL}/api/favorites`)
+        .set('Authorization', token);
 
-
-// export async function addFavorite(book, token) {
-//     const response = await request
-//         .post(`${URL}/api/favorites`)
-//         .set('Authorization', token)
-//         .send(book)
-
-//     return response.body;
-// }
-
-// export async function getFavorites(token) {
-//     const response = await request
-//         .get(`${URL}/api/favorites`)
-//         .set('Authorization', token);
-
-//     return response.body;
-// }
+    return response.body;
+}
 

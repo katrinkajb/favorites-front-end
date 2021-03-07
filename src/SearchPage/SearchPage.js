@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css'; 
-import { searchBooks  } from '../utils/api-utils.js';
+import { searchBooks, addFavorite, getFavorites } from '../utils/api-utils.js';
 import {mungeAllBooks} from "../utils/munge-utils.js";
 
 export default class SearchPage extends Component {
@@ -10,15 +10,15 @@ export default class SearchPage extends Component {
         search: ''
     }
 
-    // componentDidMount = async() => {
-    //     if (this.props.token) await this.doFavoritesFetch();
-    // }
+    componentDidMount = async() => {
+        if (this.props.token) await this.doFavoritesFetch();
+    }
 
-    // doFavoritesFetch = async () => {
-    //     const favorites = await getFavorites(this.props.user.token);
+    doFavoritesFetch = async () => {
+        const favorites = await getFavorites(this.props.user.token);
 
-    //     this.setState({ favorites })
-    // }
+        this.setState({ favorites })
+    }
 
     doSearch = async () => {
         const books = await searchBooks(this.state.search, this.props.token);
@@ -36,21 +36,21 @@ export default class SearchPage extends Component {
 
     handleSearchChange = e => this.setState({ search: e.target.value })
 
-    // handleFavoriteClick = async (rawBook) => {
-    //     await addFavorite({
+    handleFavoriteClick = async (rawBook) => {
+        await addFavorite({
             
-    //     }, this.props.user.token);
+        }, this.props.user.token);
 
-    //     await this.doFavoritesFetch();
-    // }
+        await this.doFavoritesFetch();
+    }
 
-    // isAFavorite = (book) => {
-    //     if (!this.props.token) return true;
+    isAFavorite = (book) => {
+        if (!this.props.token) return true;
 
-    //     const isItFavorite = this.state.favorites.find(favorite => favorite.book.key === book.id);
+        const isItFavorite = this.state.favorites.find(favorite => favorite.book.key === book.id);
 
-    //     return Boolean(isItFavorite);
-    // }
+        return Boolean(isItFavorite);
+    }
 
     render() {
         return (
@@ -68,11 +68,11 @@ export default class SearchPage extends Component {
                         <p>{book.author}</p>
                         <p>{book.setting}</p>
                         <p>{book.time_period}</p>
-                        {/* <p>{
+                        <p>{
                         this.isAFavorite(book) 
                             ? '<3' 
                             :  <button onClick={() => this.handleFavoriteClick(book)}>Make favorite</button>}
-                        </p> */}
+                        </p>
                     </div>)
                 }
                 </div>
