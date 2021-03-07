@@ -1,5 +1,4 @@
 function mungeAllBooks(apiData) {
-    console.log(apiData.title);
     const {
       title,
       author_name,

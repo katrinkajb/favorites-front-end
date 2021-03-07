@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { getFavorites } from '../utils/api-utils.js';
 import '../App.css'; 
 
 export default class FavoritesPage extends Component {
@@ -6,6 +7,12 @@ export default class FavoritesPage extends Component {
         favorites: [],
     }
     
+    componentDidMount = async() => {
+        const favorites = await getFavorites(this.props.token);
+
+        this.setState({ favorites })
+    }
+
     render() {
         return (
             <div className='container'>
@@ -18,9 +25,9 @@ export default class FavoritesPage extends Component {
                 {this.state.favorites.map(fave =>
                     <div className='book'>
                         <h3>{fave.title}</h3>
-                        <p>{fave.author}</p>
-                        <p>{fave.setting}</p>
-                        <p>{fave.time_period}</p>
+                        <p>Author: {fave.author}</p>
+                        <p>Setting: {fave.setting}</p>
+                        <p>Time Period: {fave.time_period}</p>
                     </div>
                 )}
             </div>

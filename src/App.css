@@ -2,7 +2,7 @@ body {
   background-image: url('http://getwallpapers.com/wallpaper/full/4/1/a/1016770-large-wallpaper-library-1920x1080-for-macbook.jpg');
   background-repeat: no-repeat;
   background-size: stretch;
-  background-position: center;
+  background-position: top;
   color: white;
   text-align: center;
   justify-content: center;
@@ -33,8 +33,6 @@ body {
   width: fit-content;
   border: 1px black solid;
   border-radius: 5px;
-  /* align-content: center;
-  justify-self: center; */
   margin: 30px;
   padding: 20px;
 }
@@ -48,4 +46,11 @@ body {
 
 input {
   margin: 3px;
+}
+
+.book {
+  display: block;
+  border: 1px black solid;
+  margin: 10px;
+  justify-content: center;
 }

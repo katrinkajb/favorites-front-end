@@ -36,10 +36,8 @@ export default class SearchPage extends Component {
 
     handleSearchChange = e => this.setState({ search: e.target.value })
 
-    handleFavoriteClick = async (rawBook) => {
-        await addFavorite({
-            
-        }, this.props.user.token);
+    handleFavoriteClick = async (book) => {
+        await addFavorite(book, this.props.user.token);
 
         await this.doFavoritesFetch();
     }
@@ -65,12 +63,12 @@ export default class SearchPage extends Component {
                     this.state.books.map((book, i) => 
                     <div key={`${book.title}-${i}`} className="book">
                         <h3>{book.title}</h3>
-                        <p>{book.author}</p>
-                        <p>{book.setting}</p>
-                        <p>{book.time_period}</p>
+                        <p>Author: {book.author}</p>
+                        <p>Setting: {book.setting}</p>
+                        <p>Time Period: {book.time_period}</p>
                         <p>{
                         this.isAFavorite(book) 
-                            ? '<3' 
+                            ? 'Already a favorite!' 
                             :  <button onClick={() => this.handleFavoriteClick(book)}>Make favorite</button>}
                         </p>
                     </div>)
