@@ -37,7 +37,13 @@ export default class SearchPage extends Component {
     handleSearchChange = e => this.setState({ search: e.target.value })
 
     handleFavoriteClick = async (book) => {
-        await addFavorite(book, this.props.user.token);
+        await addFavorite({
+            title: book.title,
+            author: book.author,
+            setting: book.setting,
+            time_period: book.time_period,
+            key: book.key,
+        }, this.props.user.token);
 
         await this.doFavoritesFetch();
     }
