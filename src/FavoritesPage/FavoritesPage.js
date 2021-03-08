@@ -26,7 +26,7 @@ export default class FavoritesPage extends Component {
                     <div className='book'>
                         <h3>{fave.title}</h3>
                         <p>Author: {fave.author}</p>
-                        <p>Setting: {fave.setting}</p>
+                        <p>Setting: ${fave.setting}</p>
                         <p>Time Period: {fave.time_period}</p>
                     </div>
                 )}
