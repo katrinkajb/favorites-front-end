@@ -1,5 +1,5 @@
 body {
-  background-image: url('http://getwallpapers.com/wallpaper/full/4/1/a/1016770-large-wallpaper-library-1920x1080-for-macbook.jpg');
+  background-image: url('./background.jpg');
   background-repeat: no-repeat;
   background-size: stretch;
   background-position: top;
@@ -7,11 +7,6 @@ body {
   text-align: center;
   justify-content: center;
 }
-
-/* .App {
-  text-align: center;
-  justify-content: center;
-} */
 
 .App-header {
   background-color: rgba(245, 97, 97, 0.795);
